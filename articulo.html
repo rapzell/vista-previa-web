@@ -131,24 +131,47 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--pm-crema);color:#
     return out;
   }
   var slug = new URLSearchParams(location.search).get('a');
-  fetch('/vista-previa-web/content/articles.json',{cache:'no-store'})
-    .then(function(r){return r.ok?r.json():null})
-    .then(function(j){
-      var items = (j&&j.items)||[];
-      var art = items.filter(function(a){return a&&a.slug===slug})[0] || items.filter(function(a){return a&&a.title===slug})[0];
+  function norm(s){return (s||'').toString().trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+  var want = norm(slug);
+  Promise.all([
+    fetch('/vista-previa-web/content/articles.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).catch(function(){return null}),
+    fetch('/vista-previa-web/assets/articulos-content.json?v=20261210aon',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})
+  ])
+    .then(function(res){
+      var cms = (res[0]&&res[0].items)||[];
+      var lib = res[1]||{};
+      var art = cms.filter(function(a){return a&&(norm(a.slug)===want||norm(a.title)===want)})[0];
+      var bodyHtml = '', title = '', image = '', fecha = '';
+      if(art){
+        title = art.title; image = art.image||'';
+        fecha = art.date ? new Date(art.date+'T12:00:00').toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'numeric'}) : '';
+        bodyHtml = md(art.body||'');
+      }else{
+        var key = Object.keys(lib).filter(function(k){return norm(k)===want||norm(lib[k]&&lib[k].title)===want})[0];
+        var entry = key ? lib[key] : null;
+        if(entry){
+          title = entry.title||key;
+          (entry.sections||[]).forEach(function(sec){
+            if(sec.sourceTitle) bodyHtml += '<h2>'+esc(sec.sourceTitle)+'</h2>';
+            (sec.paragraphs||[]).forEach(function(p){
+              if(/\.(jpe?g|png|webp|gif|svg)(\?|$)/i.test(p)) bodyHtml += '<img class="pm-inline-img" src="'+esc(p)+'" alt="'+esc(title)+'" loading="lazy">';
+              else bodyHtml += md(p);
+            });
+          });
+        }
+      }
       var box = document.getElementById('pm-articulo');
-      if(!art){
+      if(!title){
         box.innerHTML = '<a class="pm-articulo-back" href="/vista-previa-web/articulos.html">← Artículos</a><p class="pm-articulo-empty">Artículo no encontrado.</p>';
         return;
       }
-      document.title = art.title + ' | Piramicasa';
-      var fecha = art.date ? new Date(art.date+'T12:00:00').toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'numeric'}) : '';
+      document.title = title + ' | Piramicasa';
       box.innerHTML =
         '<a class="pm-articulo-back" href="/vista-previa-web/articulos.html">← Artículos</a>' +
-        '<h1 class="pm-articulo-title">'+esc(art.title)+'</h1>' +
+        '<h1 class="pm-articulo-title">'+esc(title)+'</h1>' +
         '<div class="pm-articulo-meta">'+(fecha?'<span>'+fecha+'</span>':'')+'<span>Piramicasa</span></div>' +
-        (art.image ? '<img class="pm-articulo-img" src="'+esc(art.image)+'" alt="'+esc(art.title)+'">' : '') +
-        '<div class="pm-articulo-body">'+md(art.body)+'</div>';
+        (image ? '<img class="pm-articulo-img" src="'+esc(image)+'" alt="'+esc(title)+'">' : '') +
+        '<div class="pm-articulo-body">'+bodyHtml+'</div>';
     })
     .catch(function(){
       document.getElementById('pm-articulo').innerHTML = '<a class="pm-articulo-back" href="/vista-previa-web/articulos.html">← Artículos</a><p class="pm-articulo-empty">No se pudo cargar el artículo.</p>';
