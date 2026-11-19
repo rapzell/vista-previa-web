@@ -54,6 +54,27 @@
    * We walk text nodes and replace exact matches.
    * For elements with data-i18n="key", we replace innerHTML/textContent.
    */
+  /* ---- Lazy per-language dictionary loading ----
+   * Dictionaries live in assets/i18n/lang-<code>.js and are fetched
+   * only when a non-Spanish language is active (stored choice or
+   * browser language), saving ~1.2MB on every page view.
+   */
+  var langLoadCbs = {};
+  function loadLang(code, cb){
+    if(code===DEFAULT || (window.PM_I18N && window.PM_I18N[code])) { cb(); return; }
+    if(langLoadCbs[code]) { langLoadCbs[code].push(cb); return; }
+    langLoadCbs[code] = [cb];
+    var s = document.createElement('script');
+    s.src = '/vista-previa-web/assets/i18n/lang-'+code+'.js';
+    var done = function(){
+      var cbs = langLoadCbs[code]||[]; langLoadCbs[code]=null;
+      for(var i=0;i<cbs.length;i++){ try{cbs[i]()}catch(e){} }
+    };
+    s.onload = done;
+    s.onerror = done; // applyTranslations() no-ops if dict missing
+    document.head.appendChild(s);
+  }
+
   function applyTranslations(){
     if(current===DEFAULT) return; // Spanish = source, no-op
     var T = window.PM_I18N && window.PM_I18N[current];
@@ -294,7 +315,7 @@
       showBanner();
     };
     if(window.__next_f){ setTimeout(buildUI,1400); } else { buildUI(); }
-    applyTranslations();
+    if(current!==DEFAULT) loadLang(current, applyTranslations);
     // Re-apply after React hydration / mutations
     var debounce;
     var observer = new MutationObserver(function(){
