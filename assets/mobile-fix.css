@@ -84,7 +84,7 @@ body{padding-top:50px!important}
 .pm-mobile-bar .pm-search-trigger,.pm-mobile-bar .pm-lang-switcher,.pm-mobile-bar #pm-lang-switcher,.pm-mobile-bar .pm-phone{display:none!important}
 
 /* Hero kicker over photo background: ensure AA contrast with a dark scrim pill */
-.pm-hero-label{display:inline-block;background:rgba(31,42,40,.62);padding:7px 16px;border-radius:999px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.pm-hero-label{display:inline-block;background:rgba(31,42,40,.7);padding:7px 16px;border-radius:999px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);text-shadow:0 1px 3px rgba(0,0,0,.55);color:#E7DCC6!important}
 
 /* Typography: avoid single-word last lines where supported */
 p,.pm-glass-text,.pm-lead{text-wrap:pretty}
