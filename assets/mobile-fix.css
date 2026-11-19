@@ -399,3 +399,9 @@ html[dir="rtl"] .pm-aval-paused{right:auto;left:12px}
 .pm-header:not(.pm-scrolled) .pm-nav-item>a{color:#F6F1E7}
 /* Social source badges: 9.92px -> 11.5px (functional text floor) */
 .pm-social-src{font-size:.72rem !important}
+
+/* Hero móvil: el keyframe del chunk fuerza background-size:200% 200% y
+   deforma la foto de fondo (la estira a doble alto/ancho). Cover + sin pan. */
+@media (max-width:640px){
+  .pm-hero{animation:none !important;background-size:cover !important;background-position:center !important}
+}
