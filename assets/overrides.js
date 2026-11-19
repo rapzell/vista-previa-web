@@ -114,7 +114,7 @@
       try { sessionStorage.setItem('pm-edit', '1'); } catch(e2){}
       try { localStorage.setItem('pm-edit', '1'); } catch(e2){}
       var es = document.createElement('script');
-      es.src = '/vista-previa-web/assets/edit-mode.js?v=20261104c';
+      es.src = '/vista-previa-web/assets/edit-mode.js?v=20261222a';
       es.defer = true;
       (document.body || document.documentElement).appendChild(es);
     }

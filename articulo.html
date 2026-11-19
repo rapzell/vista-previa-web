@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang="es"><head><script src="/vista-previa-web/assets/consent.js?v=20261221b" defer></script><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!DOCTYPE html><html lang="es"><head><script src="/vista-previa-web/assets/consent.js?v=20261222a" defer></script><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="theme-color" content="#F6F1E7" />
 <link rel="preload" as="font" type="font/woff2" href="/vista-previa-web/assets/fonts/fraunces-latin.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="/vista-previa-web/assets/fonts/inter-latin.woff2" crossorigin />
-<title>Artículo | Piramicasa</title><meta name="description" content="Artículo de Piramicasa: investigación y divulgación del efecto piramidal."/><link rel="canonical" href="https://www.piramicasa.com/articulo.html" /><link rel="stylesheet" href="/vista-previa-web/_next/static/css/591bfc4a40e67df4.css?v=20261221k"/><link rel="stylesheet" href="/vista-previa-web/assets/mobile-fix.css?v=20261210a"/><link rel="stylesheet" href="/vista-previa-web/assets/sacred-grid.css?v=20261210a"/><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,10 90,85 10,85' fill='%233D4A30'/%3E%3Cpolygon points='50,25 75,75 25,75' fill='%23C69C6D'/%3E%3C/svg%3E"/>
+<title>Artículo | Piramicasa</title><meta name="description" content="Artículo de Piramicasa: investigación y divulgación del efecto piramidal."/><link rel="canonical" href="https://www.piramicasa.com/articulo.html" /><link rel="stylesheet" href="/vista-previa-web/_next/static/css/591bfc4a40e67df4.css?v=20261222a"/><link rel="stylesheet" href="/vista-previa-web/assets/mobile-fix.css?v=20261222a"/><link rel="stylesheet" href="/vista-previa-web/assets/sacred-grid.css?v=20261222a"/><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,10 90,85 10,85' fill='%233D4A30'/%3E%3Cpolygon points='50,25 75,75 25,75' fill='%23C69C6D'/%3E%3C/svg%3E"/>
 <style>
 :root{--pm-verde-deep:#1f2a28;--pm-verde:#4a7c75;--pm-oro:#8a5f1a;--pm-crema:#f6f1e7;--pm-ink:#4a5754;--pm-muted:#4a5754;--pm-border:#d9cfb8}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -135,7 +135,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--pm-crema);color:#
   var want = norm(slug);
   Promise.all([
     fetch('/vista-previa-web/content/articles.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).catch(function(){return null}),
-    fetch('/vista-previa-web/assets/articulos-content.json?v=20261210aon',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})
+    fetch('/vista-previa-web/assets/articulos-content.json?v=20261222aon',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})
   ])
     .then(function(res){
       var cms = (res[0]&&res[0].items)||[];
@@ -178,10 +178,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--pm-crema);color:#
     });
 })();
 </script>
-<script src="/vista-previa-web/assets/overrides.js?v=20261210b" defer></script>
-<script src="/vista-previa-web/assets/translations.js?v=20261117a" defer></script>
-<script src="/vista-previa-web/assets/i18n.js?v=20261221a" defer></script>
-<script src="/vista-previa-web/assets/mobile-menu.js?v=20261221a" defer></script>
-  <script src="/vista-previa-web/assets/site-search.js?v=20261221j" defer></script><script src="/vista-previa-web/assets/hero-gallery.js?v=20261221e" defer></script>
+<script src="/vista-previa-web/assets/overrides.js?v=20261222a" defer></script>
+<script src="/vista-previa-web/assets/translations.js?v=20261222a" defer></script>
+<script src="/vista-previa-web/assets/i18n.js?v=20261222a" defer></script>
+<script src="/vista-previa-web/assets/mobile-menu.js?v=20261222a" defer></script>
+  <script src="/vista-previa-web/assets/site-search.js?v=20261222a" defer></script><script src="/vista-previa-web/assets/hero-gallery.js?v=20261222a" defer></script>
 </body>
 </html>
