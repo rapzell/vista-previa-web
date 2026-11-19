@@ -80,6 +80,9 @@ body{padding-top:50px!important}
 .pm-stats{grid-template-columns:1fr}
 .pm-glass-light{padding:20px 12px}
 }
+/* Keep the mobile bar clean: no header controls may inject into it */
+.pm-mobile-bar .pm-search-trigger,.pm-mobile-bar .pm-lang-switcher,.pm-mobile-bar #pm-lang-switcher,.pm-mobile-bar .pm-phone{display:none!important}
+
 /* ===== HIDE ORIGINAL LOGO SEAL (replaced by chatbot toggle) ===== */
 .pm-logo-seal{display:none!important}
 
