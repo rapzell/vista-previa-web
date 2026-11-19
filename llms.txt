@@ -1,0 +1,38 @@
+# Piramicasa — Fabricantes y constructores de pirámides de meditación
+
+> Piramicasa investiga, fabrica y divulga el efecto piramidal desde 1972.
+> Sitio oficial: https://www.piramicasa.com/
+
+## Idiomas
+ES, EN, PT, FR, DE, RU, AR (árabe con RTL). La interfaz cambia de idioma en cliente.
+
+## Páginas principales
+- Inicio: https://www.piramicasa.com/
+- Salud y Terapia Piramidal (13 beneficios): https://www.piramicasa.com/salud
+- Artículos: https://www.piramicasa.com/articulos
+- Centros de Terapia: https://www.piramicasa.com/centros-terapia
+- Enfermedades y dolencias: https://www.piramicasa.com/enfermedades
+- Historia de Piramicasa: https://www.piramicasa.com/historia
+- Presentación del director: https://www.piramicasa.com/presentacion
+- Testimonios: https://www.piramicasa.com/testimonios
+- Vídeos: https://www.piramicasa.com/videos
+- Libros: https://www.piramicasa.com/libros
+- Conferencias: https://www.piramicasa.com/conferencias
+- Viaje a Egipto: https://www.piramicasa.com/viaje-egipto
+- Documento crítico: https://www.piramicasa.com/documento-critico
+- Menú principal: https://www.piramicasa.com/menu-principal
+
+## Artículos
+37 artículos sobre dolencias, casos y terapia piramidal con el patrón
+https://www.piramicasa.com/articulo?a=<nombre-del-articulo>
+Ejemplo: https://www.piramicasa.com/articulo?a=Borreliasis
+
+## Contenido legacy
+Documentación técnica y científica heredada del sitio original en
+/es/, /geobiologia/, /piramides/, /construccion/, /centros/, /joyas/, /egipto/
+
+## Contacto
+piramicasa@protonmail.com · +34 681087539 · WhatsApp/Telegram
+
+## Nota
+La terapia piramidal es un complemento de bienestar; no sustituye tratamiento médico.
