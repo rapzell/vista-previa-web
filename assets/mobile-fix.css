@@ -89,6 +89,10 @@ body{padding-top:50px!important}
 /* Typography: avoid single-word last lines where supported */
 p,.pm-glass-text,.pm-lead{text-wrap:pretty}
 
+/* Keep hero text legible over the lighter photo */
+.pm-hero h1{text-shadow:0 2px 14px rgba(31,42,40,.75),0 1px 4px rgba(31,42,40,.6)}
+.pm-hero p,.pm-hero .pm-hero-text,[data-anim="hero-text"]{text-shadow:0 1px 8px rgba(31,42,40,.7),0 1px 3px rgba(31,42,40,.5)}
+
 /* ===== HIDE ORIGINAL LOGO SEAL (replaced by chatbot toggle) ===== */
 .pm-logo-seal{display:none!important}
 
