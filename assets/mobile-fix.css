@@ -418,3 +418,8 @@ html[dir="rtl"] .pm-aval-paused{right:auto;left:12px}
 @media (max-width:640px){
   .pm-hero{animation:none !important;background-size:cover !important;background-position:center !important}
 }
+
+/* Hero: on narrow/portrait screens use the tall photo so the subject is visible */
+@media (max-width:900px),(orientation:portrait){
+.pm-hero{background-image:linear-gradient(135deg,rgba(31,42,40,.62),rgba(74,124,117,.42) 50%,rgba(31,42,40,.62)),url(piramicasa/hero-portada-piramide.jpg);background-size:auto,cover;background-position:50%,58% 50%;background-repeat:no-repeat}
+}
