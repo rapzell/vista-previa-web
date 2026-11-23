@@ -169,7 +169,7 @@ var PM_CB_I18N = {
   },
   construccion: {
     en: 'Building a therapeutic pyramid requires:\n• 📐 <strong>Exact proportion</strong> (golden ratio)\n• 🧭 <strong>Orientation</strong> magnetic north-south\n• 🪵 <strong>Materials</strong> non-ferromagnetic (wood, copper, aluminum)\n• ⚡ <strong>No metallic parts</strong> that interfere\n\nWould you like to see the videos about construction?',
-    pt: 'A construção de uma pirâmide terapêutica requer:\n• 📐 <strong>Proporção exacta</strong> (proporção áurea)\n• 🧭 <strong>Orientação</strong> norte-sul magnética\n• 🪵 <strong>Materiais</strong> não ferromagnéticos (madeira, cobre, alumínio)\n• ⚡ <strong>Sem peças metálicas</strong> que interfiram\n\nQuer ver os vídeos sobre construção?',
+    pt: 'A construção de uma pirâmide terapêutica requer:\n• 📐 <strong>Proporção exacta</strong> (proporção áurea)\n• 🧭 <strong>Orientação</strong> norte-sul magnética\n• 🪵 <strong>Materiais</strong> paramagnéticos de alta pureza (madeira, PVC)\n• ⚡ <strong>Sem peças metálicas</strong> que interfiram\n\nQuer ver os vídeos sobre construção?',
     fr: 'La construction d\'une pyramide thérapeutique requiert :\n• 📐 <strong>Proportion exacte</strong> (nombre d\'or)\n• 🧭 <strong>Orientation</strong> nord-sud magnétique\n• 🪵 <strong>Matériaux</strong> non ferromagnétiques (bois, cuivre, aluminium)\n• ⚡ <strong>Sans pièces métalliques</strong> qui interfèrent\n\nSouhaitez-vous voir les vidéos sur la fabrication ?',
     de: 'Der Bau einer therapeutischen Pyramide erfordert:\n• 📐 <strong>Exakte Proportion</strong> (Goldener Schnitt)\n• 🧭 <strong>Ausrichtung</strong> magnetisch Nord-Süd\n• 🪵 <strong>Materialien</strong> nicht ferromagnetisch (Holz, Kupfer, Aluminium)\n• ⚡ <strong>Keine Metallteile</strong>, die stören\n\nMöchten Sie die Videos zum Bau sehen?',
     ru: 'Строительство терапевтической пирамиды требует:\n• 📐 <strong>Точной пропорции</strong> (золотое сечение)\n• 🧭 <strong>Ориентации</strong> магнитный север-юг\n• 🪵 <strong>Материалов</strong> не ферромагнитных (дерево, медь, алюминий)\n• ⚡ <strong>Без металлических деталей</strong>, которые мешают\n\nХотите увидеть видео о строительстве?',
@@ -1136,15 +1136,6 @@ var PM_CB_ART_KW = {
     de: ['unterschlupf','schutzhutte','zuflucht'],
     ru: ['убежища','приюты'],
     ar: ['ملاجئ','مأوى هرمي'],
-  },
-  'art-planos': {
-    es: ['planos','hacer piramide','construir piramide','planos piramidales','medidas piramide'],
-    en: ['plans','blueprints','build a pyramid','pyramid plans','pyramid dimensions','measurements'],
-    pt: ['plantas','construir piramide','medidas'],
-    fr: ['plans','construire une pyramide','dimensions pyramide','mesures'],
-    de: ['plane','bauplane','pyramide bauen','masse','abmessungen'],
-    ru: ['планы','чертежи','построить пирамиду','размеры пирамиды','чертёж'],
-    ar: ['خطط','مخططات','بناء هرم','قياسات الهرم','أبعاد'],
   },
   'art-vendedores': {
     es: ['representantes','vendedores','distribuidores','ser distribuidor'],
