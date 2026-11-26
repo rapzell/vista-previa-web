@@ -37,7 +37,7 @@
       img.loading = "lazy";
       img.decoding = "async";
       b.appendChild(img);
-      b.appendChild(el("span", "pm-social-play", "<svg viewBox='0 0 24 24' width='26' height='26' fill='currentColor' aria-hidden='true'><path d='M8 5v14l11-7z'/vista-previa-web/></svg>"));
+      b.appendChild(el("span", "pm-social-play", "<svg viewBox='0 0 24 24' width='26' height='26' fill='currentColor' aria-hidden='true'><path d='M8 5v14l11-7z'/></svg>"));
       b.appendChild(el("span", "pm-social-src", "YouTube"));
       b.addEventListener("click", function () {
         var f = document.createElement("iframe");
@@ -64,7 +64,7 @@
         img.addEventListener("error", function () { img.style.display = "none"; });
         a.appendChild(img);
       }
-      a.appendChild(el("span", "pm-social-play", "<svg viewBox='0 0 24 24' width='26' height='26' fill='currentColor' aria-hidden='true'><path d='M8 5v14l11-7z'/vista-previa-web/></svg>"));
+      a.appendChild(el("span", "pm-social-play", "<svg viewBox='0 0 24 24' width='26' height='26' fill='currentColor' aria-hidden='true'><path d='M8 5v14l11-7z'/></svg>"));
       a.appendChild(el("span", "pm-social-src", v.source || "Social"));
       s.appendChild(a);
     }
@@ -94,15 +94,15 @@
         a.target = "_blank";
         a.rel = "noopener";
         a.setAttribute("aria-label", p[1]);
-        a.innerHTML = "<svg viewBox='0 0 24 24' width='18' height='18' fill='currentColor' aria-hidden='true'><path d='" + p[2] + "'/vista-previa-web/></svg>";
+        a.innerHTML = "<svg viewBox='0 0 24 24' width='18' height='18' fill='currentColor' aria-hidden='true'><path d='" + p[2] + "'/></svg>";
         links.appendChild(a);
       });
     head.appendChild(links);
     sec.appendChild(head);
 
     var wrap = el("div", "pm-social-viewport");
-    var prev = el("button", "pm-social-btn pm-social-prev", "<svg viewBox='0 0 24 24' width='20' height='20' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M15 18l-6-6 6-6'/vista-previa-web/></svg>");
-    var next = el("button", "pm-social-btn pm-social-next", "<svg viewBox='0 0 24 24' width='20' height='20' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M9 18l6-6-6-6'/vista-previa-web/></svg>");
+    var prev = el("button", "pm-social-btn pm-social-prev", "<svg viewBox='0 0 24 24' width='20' height='20' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M15 18l-6-6 6-6'/></svg>");
+    var next = el("button", "pm-social-btn pm-social-next", "<svg viewBox='0 0 24 24' width='20' height='20' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M9 18l6-6-6-6'/></svg>");
     prev.type = next.type = "button";
     prev.setAttribute("aria-label", t("Vídeos anteriores"));
     next.setAttribute("aria-label", t("Vídeos siguientes"));
