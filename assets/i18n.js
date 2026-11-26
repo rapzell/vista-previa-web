@@ -241,6 +241,16 @@
       } else {
         headerRight.appendChild(wrap);
       }
+      // Long translated nav labels can push the switcher past the
+      // viewport edge — fall back to the floating position then.
+      requestAnimationFrame(function(){
+        if(wrap.parentNode===document.body || !wrap.parentNode) return;
+        var r=wrap.getBoundingClientRect();
+        if(r.right > window.innerWidth-8){
+          wrap.style.cssText='position:fixed;top:12px;right:12px;z-index:10000;display:inline-flex;align-items:center;';
+          document.body.appendChild(wrap);
+        }
+      });
     }
   }
 
