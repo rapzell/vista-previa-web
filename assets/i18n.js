@@ -284,9 +284,36 @@
     setTimeout(function(){ if(banner.parentNode) banner.remove(); }, 15000);
   }
 
+  /* Static translated copies live under /<lang>/ for these pages.
+   * When the user switches language on one of them, navigate to the
+   * translated URL (indexable, hreflang-linked) instead of reloading. */
+  var LANG_PAGES = ['index.html','articulos.html','articulos/index.html','centros-terapia.html','conferencias.html','construccion/index.html','documento-critico.html','enfermedades.html','historia.html','libros.html','menu-principal.html','piramides/index.html','presentacion.html','salud.html','testimonios.html','viaje-egipto.html','videos.html'];
+  function sitePrefix(){
+    var sc=document.getElementsByTagName('script');
+    for(var i=0;i<sc.length;i++){
+      var m=(sc[i].src||'').match(/^(.*)\/assets\/i18n\.js/);
+      if(m) return m[1].replace(/^https?:\/\/[^/]+/,'');
+    }
+    return '';
+  }
+  function langUrl(code){
+    var prefix=sitePrefix();
+    var rel=location.pathname;
+    if(prefix && rel.indexOf(prefix)===0) rel=rel.slice(prefix.length);
+    rel=rel.replace(/^\/+/, '');
+    var first=rel.split('/')[0];
+    if(SUPPORTED.indexOf(first)!==-1 && first!==DEFAULT) rel=rel.slice(first.length).replace(/^\/+/, '');
+    if(rel==='' || rel==='index.html') rel='index.html';
+    if(LANG_PAGES.indexOf(rel)===-1) return null;
+    if(code===DEFAULT) return prefix+'/'+(rel==='index.html'?'':rel);
+    return prefix+'/'+code+'/'+(rel==='index.html'?'':rel);
+  }
+
   function setLang(code){
     if(SUPPORTED.indexOf(code)===-1 || code===current) return;
     try{ localStorage.setItem(STORAGE_KEY,code); }catch(e){}
+    var url = langUrl(code);
+    if(url){ location.href = url; return; }
     // Reload so React re-renders in the source language and we can
     // translate fresh — switching between two non-Spanish languages
     // otherwise fails because the DOM no longer contains Spanish keys.
