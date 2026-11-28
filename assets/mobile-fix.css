@@ -399,13 +399,14 @@ html[dir="rtl"] .pm-aval-paused{right:auto;left:12px}
 .pm-footer h4,.pm-footer h3{color:#D9B25C !important}
 .pm-footer a,.pm-cta a,.pm-footer-grid a,.pm-contact-grid a,.pm-contact-card a,.pm-consent-txt a,#pm-consent a{color:#9EC7C0}
 .pm-footer .pm-btn-outline,.pm-cta .pm-btn-outline{color:#F6F1E7 !important}
-/* Tagline & phone bump */
-.pm-tagline{color:rgba(246,241,231,.85) !important}
-.pm-phone{color:#E7DCC6 !important}
+/* Tagline & phone: cream over dark (unscrolled), dark over cream (scrolled) */
+.pm-header:not(.pm-scrolled) .pm-tagline,.pm-tagline{color:rgba(246,241,231,.85) !important}
+.pm-header.pm-scrolled .pm-tagline{color:#4A5754 !important}
+.pm-header:not(.pm-scrolled) .pm-phone,.pm-phone{color:#E7DCC6 !important}
+.pm-header.pm-scrolled .pm-phone{color:#8A5F1A !important}
 /* Gold text on dark surfaces -> lighter gold #D9B25C (~5.9:1) */
 .pm-cta .pm-label,.pm-footer .pm-label{color:#D9B25C !important}
 .pm-social a{color:#D9B25C !important}
-.pm-phone{color:#E7DCC6 !important}
 /* Footer legal line: 4.1:1 -> ~7.7:1 */
 .pm-footer-bottom{color:rgba(246,241,231,.7) !important}
 /* Header nav links over dark hero: 4.0:1 -> full cream */
